@@ -1,0 +1,479 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+@font-face {
+  font-family: "GT Walsheim";
+  src: url("./GTWalsheimPro-Regular.ttf");
+}
+
+a {
+  pointer-events: all;
+}
+
+@font-face {
+  font-family: "GT Walsheim Bold";
+  src: url("./GTWalsheimPro-Bold.ttf");
+}
+
+:root {
+  --mainColor: rgb(30, 123, 245);
+}
+
+body {
+  background: white;
+  overflow-x: hidden;
+  font-family: "GT Walsheim", sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6, p {
+  pointer-events: none;
+}
+
+html {
+  cursor: none;
+}
+
+.o-anim-ty {
+  /*
+  * The will-change CSS property provides a way for authors to hint browsers about the kind of changes
+  * to be expected on an element, so that the browser can setup appropriate optimizations ahead of time
+  * before the element is actually changed.
+  */
+  will-change: transform;
+  -webkit-transition: -webkit-transform 0.1s linear;
+  transition: -webkit-transform 0.1s linear;
+  transition: transform 0.1s linear;
+  transition: transform 0.1s linear, -webkit-transform 0.1s linear;
+}
+
+
+.c-trigger {
+  display: none;
+  width: 100%;
+  height: 1px;
+  background-color: #90e589;
+  top: 50%;
+  right: 0px;
+  position: fixed;
+  z-index: 2;
+}
+
+h1, h2, h3, h4 {
+  font-family: 'GT Walsheim Bold', sans-serif;
+}
+
+.is-debug .c-trigger {
+  display: block;
+}
+
+.c-spacer {
+  display: block;
+  width: 100%;
+  padding-bottom: 0;
+}
+
+.c-section {
+  max-width: 100%;
+  width: 100%;
+  display: block;
+  padding: 0px 20px;
+  margin: 100px auto;
+  position: relative;
+  z-index: 3;
+}
+@media (min-width: 501px) {
+  .c-section {
+    max-width: 100%;
+    width: 1140px;
+    margin: 200px auto;
+    padding: 0px 40px;
+    display: -webkit-box;
+    display: flex;
+    flex-wrap: wrap;
+    -webkit-box-align: start;
+            align-items: flex-start;
+  }
+}
+
+.starter {
+  height: 200vh;
+  background-color: black;
+  opacity: var(--o);
+  margin: 0;
+  padding: 0;
+  width: 100vw;
+}
+
+.welcomeparent {
+  height: 100vh;
+  background-color: rgba(0,0,0,0);
+  position: absolute;
+  width: 100vw;
+  top: 100vh;
+}
+
+.welcomechild {
+  transform: translate(-50%,-50%) scale(var(--s));
+  width: fit-content;
+  height: fit-content;
+  margin: 0;
+  left: 50%;
+  top: 50%;
+  position: relative;
+}
+
+.whatisthis {
+  height: 100vh;
+}
+
+.wtext {
+  opacity: var(--ot);
+  margin: 0;
+  left: 30%;
+  top: 50%;
+  transform: translate(-50%, calc(-50% + var(--y) * -0.3));
+  width: 50vw;
+  /* display: grid; */
+  font-size: 20px;
+  
+}
+
+.a {
+  color: black;
+  text-decoration: none;
+  font-size: 20px;
+}
+
+p {
+  font-size: 20px;
+  line-height: 25px;
+}
+
+.after {
+    position: relative;
+    background: lightgray;
+    width: 100%;
+    height: 3px;
+}
+
+.before {
+    position: relative;
+    top: -3px;
+    background: rgb(20,20,20);
+    width: 0%;
+    height: 3px;
+    z-index: 100;
+  transition-duration: .3s;
+}
+
+.thea:hover .before {
+    width: 100%;
+    transition-duration: .3s;
+}
+
+.thea {
+  width: fit-content;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+.whead {
+  width: 100vw;
+  text-align: center;
+}
+
+/* a {
+  background:
+     linear-gradient(
+       to bottom, var(--mainColor) 0%,
+       var(--mainColor) 100%
+     );
+    background-position: 0 100%;
+    background-repeat: repeat-x;
+    background-size: 4px 4px;
+  color: #000;
+  text-decoration: none;
+  transition: background-size .2s;
+}
+
+a:hover {
+  background-size: 4px 50px;
+  cursor: pointer;
+} */
+
+a {
+  border-bottom: 2px solid rgba(0,0,0,0.3);
+  text-decoration: none;
+  color: black;
+  cursor: none;
+}
+
+a::before {
+  content: attr(data-hover);
+  /* height: auto; */
+  color: rgba(0,0,0,0);
+  position: absolute;
+  overflow: hidden;
+  border-bottom: 2px solid black;
+  transition-duration: .6s;
+  transform: translateY(-1px) scaleX(0);
+  transform-origin: left;
+}
+
+a:hover::before {
+  max-width: 100%;
+  transition-duration: .6s;
+  transform: translateY(-1px) scaleX(1);
+}
+
+.cursor {
+  width: 3rem;
+  height: 3rem;
+  border: 2px solid black;
+  border-radius: 50%;
+  position: fixed;
+  transform: translate(-50%,-50%);
+  pointer-events: none;
+  transition-duration: .3s;
+  transition-property: background,width,height;
+  animation-name: none;
+  animation-iteration-count: infinite;
+  animation-duration: 1s;
+  box-shadow: 0px 0px 0px 2px white, inset 0px 0px 0px 2px white;
+  z-index: 100;
+  left: -20px;
+  top: -20px;
+}
+
+.link-grow {
+  width: .5rem;
+  height: .5rem;
+  background: black;
+  animation-name: none;
+  box-shadow: 0px 0px 0px 2px white
+}
+
+@keyframes pulse {
+  0% {
+    height: 3rem;
+    width: 3rem;
+  }
+
+  50% {
+    height: 2rem;
+    width: 2rem;
+  }
+
+  100% {
+    height: 3rem;
+    width: 3rem;
+  }
+}
+
+@-webkit-keyframes pulse {
+  0% {
+    height: 3rem;
+    width: 3rem;
+  }
+
+  50% {
+    height: 2rem;
+    width: 2rem;
+  }
+
+  100% {
+    height: 3rem;
+    width: 3rem;
+  }
+}
+
+.loader {
+  animation-name: pulse;
+  animation-iteration-count: infinite;
+  animation-duration: 1s;
+  z-index: 102;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-50%);
+  border-radius: 50%;
+  background: whitesmoke;
+  box-shadow: 0 0 20px gray;
+  position: relative
+}
+
+.loadercon {
+  background: white;
+  height: 100vh;
+  width: 100vw;
+  z-index: 101;
+  position: fixed;
+  display: block;
+  transition: opacity .5s 0s, width 0s .5s;
+  overflow: hidden;
+}
+
+/* button {
+  padding: 12px 24px;
+  border: none;
+  border-radius: 5em;
+  background: lightgray;
+  font-size: .75em;
+  font-family: 'Lexend Deca', sans-serif;
+  cursor: none;
+  overflow: hidden;
+  position: relative;
+  z-index: 1;
+  transition-duration: .3s;
+  outline: none;
+}
+
+button:hover {
+  color: white;
+  transform: translateY(-5px);
+  box-shadow: 0px 0px 25px rgba(0,0,0,0.1);
+}
+
+button:active {
+  transform: translateY(0);
+  box-shadow: none;
+}
+
+button::before {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  background: #e56f36;
+  transform: scale(0);
+  transition-duration: .3s;
+  border-radius: 5em;
+  transform-origin: 50% 100%;
+  display: block;
+  content: '';
+  z-index: -1;
+}
+
+button:hover::before {
+  transform: scale(1);
+}
+
+button::before {
+  content: 'Learn';
+  z-index: 3;
+}
+
+#progressbar {
+  position: fixed;
+  right: 0;
+  height: 100%;
+  width: 10px;
+  background: var(--mainColor)
+} */
+
+.navbar {
+  width: 100vw;
+  position: fixed;
+  top: 0;
+  background: white;
+  z-index: 96;
+  padding: 1rem;
+  border-radius: 0px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.1);
+  transition: .3s;
+}
+
+.navbtn {
+  padding: 12px 24px;
+  background: white;
+  border-radius: 0px;
+  /* box-shadow: 0 0 0 1.5px black; */;
+  margin: .5em;
+  background: rgb(251, 251, 251);
+  border: none;
+}
+
+.navbtn:hover {
+  transform: none;
+  /* box-shadow: 0 0 0 1.5px black; */
+}
+
+.navbtn::before {
+  background: #e56f36;
+  transform-origin: right;
+  width: 100%;
+  border-radius: 0px;
+  height: 100%;
+  transform: scaleX(0);
+  transition: transform .3s;
+  z-index: -1;
+}
+
+img {
+  pointer-events: none;
+}
+
+.navbtn:hover::before {
+  transform-origin: left;
+  transform: scaleX(1);
+}
+
+button {
+  border: 1px solid black;
+  padding: 12px 30px;
+  background: white;
+  box-shadow: none;
+  border-radius: 0;
+  font-family: 'Lexend Deca', sans-serif;
+  font-size: .65em;
+  z-index: 1;
+  position: relative;
+  text-transform: uppercase;
+  cursor: none;
+  transition: .3s;
+  outline: none;
+  overflow: hidden;
+}
+
+button:hover {
+  color: white;
+}
+
+button:active {
+  transform: translateY(3px);
+}
+
+button::before {
+  background: black;
+  transform-origin: right;
+  width: 100%;
+  border-radius: 0px;
+  height: 100%;
+  transform: scaleX(0);
+  transition: transform .3s;
+  z-index: -1;
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  transition-timing-function: ease-in;
+}
+
+button:hover::before {
+  transform-origin: left;
+  transform: scaleX(1);
+}
+
+@media only screen and (max-width: 500px) {
+  .mediaheight {
+    height: 154vh !important;
+  }
+}
+
+button::after {
+  display: none;
+}
