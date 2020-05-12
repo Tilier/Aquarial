@@ -1,0 +1,13 @@
+.abouthead {
+    width: 100vw;
+    height: 100vh;
+}
+
+.transitioner {
+    position: absolute;
+    bottom: -3px;
+    width: 100%;
+    border-radius: .5em .5em 0 0;
+    height: 100px;
+    background: white;
+}

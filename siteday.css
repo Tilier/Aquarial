@@ -1,0 +1,175 @@
+/* .todayarticle {
+    display: flex;
+    width: 80vw;
+    left: 10vw;
+    height: 500px;
+    align-items: center;
+}
+
+.todayimg {
+    width: 80%;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.todaydesc {
+    width: 50%;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    padding-left: 3.5rem;
+    padding-right: 10px;
+
+}
+
+h1 {
+    margin: 0;
+} */
+
+.sites {
+    display: grid;
+    width: 100vw;
+    box-sizing: border-box;
+    padding: 0 100px;
+    margin: 100px 0;
+    grid-template-columns: auto auto auto;
+    grid-row-gap: 50px;
+}
+
+.item {
+    width: 95%;
+    left: 2.5%;
+    overflow: hidden;
+    box-shadow: none;
+    border-radius: 7px;
+    transition-duration: .5s;
+    position: relative;
+}
+
+.item:hover {
+    box-shadow: 0 0 20px rgba(0,0,0,0.1);
+    transform: translateY(-7px);
+}
+
+.item:active {
+    box-shadow: 0 0 20px rgba(0,0,0,0.05);
+    transform: translateY(0px);
+}
+
+.itemimg {
+    width: 100%;
+    height: auto;
+    border-radius: 7px;
+    transition-duration: .5s;
+    transform: scale(1.1); /* So it fills whole container */
+}
+
+.itemimgcon {
+    width: 100%;
+    overflow: hidden;
+    border-radius: 7px;
+    transition-duration: .5s;
+}
+
+.item:hover .itemimgcon {
+    border-radius: 7px 7px 0 0;
+}
+
+#item:hover #itemimg {
+    transform: scale(1.2);
+}
+
+.itemdesc {
+    padding: 30px 30px;
+}
+
+.date {
+    background: #e56f36;
+    color: white;
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 10px;
+}
+
+.ilightbox {
+    width: 80vw;
+    height: fit-content;
+    background: white;
+    box-shadow: 0 0 20px rgba(0,0,0,0.1);
+    padding: 100px;
+    border-radius: 7px;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    transition-duration: .5s;
+    position: relative;
+    overflow: hidden;
+}
+
+.ilightbox h1 {
+    margin: 0;
+}
+
+.lightboxbg {
+    background: rgba(0,0,0,0.4);
+    width: 200vw;
+    height: 200vh;
+    position: fixed;
+    top: 0;
+    z-index: 60;
+    overflow: hidden;
+}
+
+.lightboxbg.close {
+    opacity: 0;
+    margin-top: 300vh;
+    transition: opacity .5s 0s, transform .5s 0s, margin-top 0s .5s;
+    transform: translate(-50%,-50%) scale(0.9);
+    left: 50%;
+    top: 50%;
+}
+
+.lightboxbg.open {
+    opacity: 1;
+    margin-top: 0;
+    transition: opacity .5s 0s, transform .5s 0s, margin-top 0s 0s;
+    transform: translate(-50%,-50%) scale(1);
+    left: 50%;
+    top: 50%;
+}
+
+.new {
+    width: 8rem;
+    height: 8rem;
+    background: rgb(24, 97, 206);
+    position: absolute;
+    left: 0;
+    top: 0;
+    transform: translate(-50%,-50%);
+    color: white;
+    border-radius: 50%;
+}
+
+@media only screen and (max-width: 1000px) {
+    .sites {
+      grid-template-columns: auto auto;
+    }
+  }
+
+@media only screen and (max-width: 680px) {
+    .sites {
+      grid-template-columns: auto;
+      padding: 0 25px;
+    }
+  }
+
+.itemdesc .smallthing {
+    font-family: 'GT Walsheim', sans-serif;
+    font-size: 16px;
+}
+
+.itemdesc .webname {
+    font-family: 'GT Walsheim Bold', sans-serif;
+    font-size: 20px;
+}

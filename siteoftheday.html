@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Tyler Rosenblum | Site of the Day</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Google+Sans:300,400,700'>
+<link rel="stylesheet" href="./style.css">
+<link rel="stylesheet" href="./about.css">
+<link rel="stylesheet" href="./siteday.css">
+<link href="https://fonts.googleapis.com/css2?family=Lexend+Deca&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+<meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+</head>
+<body>
+
+
+<div class="c-trigger"></div>
+
+<div class="c-spacer"></div>
+
+<div class="cursor" id="cursor"></div>
+
+<div class="navbar" id="navbar">
+	<button class="navbtn" onclick="window.location.href = './index.html';">Home</button>
+	<button class="navbtn" onclick="window.location.href = './about.html';">About</button>
+	<button class="navbtn" onclick="window.location.href = './siteoftheday.html';">Site of the Day</button>
+</div>
+
+<div style="position:relative;height:fit-content">
+    <div class="abouthead" style="background: rgb(249,156,85);
+    background: linear-gradient(180deg, rgba(249,156,85,1) 0%, rgba(251,110,91,1) 100%);color:white;">
+        <div class="js-parallax-section" style="left:50%;top:50%;transform:translateX(-50%) translateY(calc(-50% + var(--abup) * 1.4));position:relative;text-align:center;font-size:2em;opacity:var(--abop)"><h3>Site of the Day.</h3><p>A collection of beautiful websites</p></div>
+    </div>
+</div>
+
+<!-- <div class="todayarticle">
+    <div class="todayimg" style="background-image:url(natalies.png)"></div>
+    <div class="todaydesc">
+        <h1>Orange Island Juice Company</h1>
+        <a data-hover="oijc.com">oijc.com</a>
+        <p>OIJC's website has a beautiful, sleek design that is just . . . amazing.</p>
+        <button class="button" data-hover="var(--maincolor)" style="margin-top: 1em">Continue reading</button>
+    </div>
+</div> -->
+
+
+
+
+<!-- LIGHTBOXES -->
+<div class="lightboxbg close" id="l1">
+    <div class="ilightbox">
+        <h1>OIJC</h1>
+        <p>Lorem.</p>
+        <button style="margin-top: 10px;">
+            Visit OIJC
+            <i class="material-icons" style="font-size:1.2em;transform:translateY(2px);margin-left:5px;">launch</i>
+        </button>
+        <!-- <img src="rotate.gif"> -->
+        <i class="material-icons linked" onclick="document.getElementById('l1').classList.replace('open', 'close')" style="background:white;padding:10px;position:absolute;left:0;top:0">close</i>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+<!-- FEATURED SITES -->
+<h1 style="text-align:center;padding:80px;padding-bottom:5px">Featured Sites</h1>
+<p style="text-align: center;">Select a site to read more about it.</p>
+<div class="sites">
+    <div class="item" id="item" onclick="document.getElementById('l1').classList.replace('close', 'open')">
+        <div class="itemimgcon">
+            <img class="itemimg" id="itemimg" src="nataliecover.png">
+        </div>
+        <div class="itemdesc">
+            <h4 class="webname">OIJC</h4>
+            <p class="smallthing">OIJC is amazing.</p>
+        </div>
+        <div class="date">
+            <h4>May 7th, 2020</h4>
+        </div>
+        <!-- <div class="new">
+            <p style="transform:translate(4rem,4rem) rotate(-45deg)">NEW</p>
+        </div> -->
+    </div>
+
+    <div class="item" id="item">
+        <div class="itemimgcon">
+            <img class="itemimg" id="itemimg" src="nataliecover.png">
+        </div>
+        <div class="itemdesc">
+            <p>OIJC</p>
+            <h4>OIJC is amazing.</h4>
+        </div>
+        <div class="date">
+            <h4>May 6th, 2020</h4>
+        </div>
+    </div>
+
+    <div class="item" id="item">
+        <div class="itemimgcon">
+            <img class="itemimg" id="itemimg" src="nataliecover.png">
+        </div>
+        <div class="itemdesc">
+            <p>OIJC</p>
+            <h4>OIJC is amazing.</h4>
+        </div>
+        <div class="date">
+            <h4>May 5th, 2020</h4>
+        </div>
+    </div>
+
+    
+</div>
+
+
+
+
+
+
+
+
+<!-- js -->
+  <script src='https://cdn.jsdelivr.net/npm/basicscroll@3.0.2/dist/basicScroll.min.js'></script><script  src="./script.js"></script>
+  <script src="./cursor.js"></script>
+  <!-- <script src="./loader.js"></script> -->
+  <script src="./cssVariables.js"></script>
+  <script src="./nav.js"></script>
+
+</body>
+</html>
