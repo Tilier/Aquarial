@@ -7,3 +7,11 @@
   font-family: "GT Walsheim Bold";
   src: url("https://aquarial.ml/GTWalsheimPro-Bold.ttf");
 }
+
+h1, h2, h3, h4 {
+	font-family: "GT Walsheim Bold", sans-serif;
+}
+
+body {
+	font-family: "GT Walsheim", sans-serif;	
+}
