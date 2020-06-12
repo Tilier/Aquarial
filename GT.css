@@ -8,10 +8,10 @@
   src: url("https://aquarial.ml/GTWalsheimPro-Bold.ttf");
 }
 
-h1, h2, h3, h4 {
+h1, h2, h3, h4, strong {
 	font-family: "GT Walsheim Bold", sans-serif;
 }
 
-body {
+body, input, button {
 	font-family: "GT Walsheim", sans-serif;	
 }
