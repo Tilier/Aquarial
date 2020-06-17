@@ -1,3 +1,5 @@
+var speed = 500;
+
 $(document).ready(function(){
   $("a").on('click', function(event) {
 
